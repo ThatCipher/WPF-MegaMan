@@ -4903,6 +4903,7 @@ GameObject:
   - component: {fileID: 473189651}
   - component: {fileID: 473189650}
   - component: {fileID: 473189653}
+  - component: {fileID: 473189654}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -4996,6 +4997,19 @@ MonoBehaviour:
   m_CropFrameX: 1
   m_CropFrameY: 1
   m_StretchFill: 0
+--- !u!114 &473189654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 473189649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 233997e93e39bb84e859e042af9c377a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1052347712}
 --- !u!1 &521310377
 GameObject:
   m_ObjectHideFlags: 0
@@ -5210,6 +5224,31 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &1052347712 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9127171813592338475, guid: 3bab809331e55de45a87e208ef4e70bb, type: 3}
+  m_PrefabInstance: {fileID: 1247527988}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1052347718
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1052347712}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 37faa82ad84a41541a69d2bfc280db90, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1119888067
 GameObject:
   m_ObjectHideFlags: 0
@@ -5312,6 +5351,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9127171813592338470, guid: 3bab809331e55de45a87e208ef4e70bb, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1052347718}
     - target: {fileID: 9127171813592338475, guid: 3bab809331e55de45a87e208ef4e70bb, type: 3}
       propertyPath: m_Name
       value: MegaMan
