@@ -17,6 +17,8 @@ public class PlayerController : MonoBehaviour
     // References
     private Rigidbody2D _rigidbody2D;
     private BoxCollider2D _boxCollider;
+
+    public Animator animator;
     
     // Checks
     private bool isShooting;
@@ -31,6 +33,14 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         JumpLogic();
+        if (IsGrounded())
+        {
+            animator.SetBool("IsJumping", false);
+        }
+        else
+        {
+            animator.SetBool("IsJumping", true);
+        }
         ShootLogic();
     }
 
@@ -44,9 +54,11 @@ public class PlayerController : MonoBehaviour
         float horizontalInput = Input.GetAxis("Horizontal");
         _rigidbody2D.velocity = new Vector2(horizontalInput * moveSpeed, _rigidbody2D.velocity.y);
 
-        if (horizontalInput < 0 && !isFlipped)
+        animator.SetFloat("Speed", Mathf.Abs(horizontalInput * moveSpeed));
+
+        if (horizontalInput < 0 && isFlipped)
             Flip();
-        else if (horizontalInput > 0 && isFlipped)
+        else if (horizontalInput > 0 && !isFlipped)
             Flip();
     }
 
