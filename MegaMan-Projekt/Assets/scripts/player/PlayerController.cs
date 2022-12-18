@@ -5,10 +5,15 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [Header("Movement")] 
+    // Movement Related Stuff
+    [Header("Movement Settings")] 
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private float jumpForce = 10f;
 
+    [Header("Blaster Settings")] 
+    [SerializeField] private GameObject _blasterOrigin;
+    [SerializeField] private GameObject _bullet;
+    
     // References
     private Rigidbody2D _rigidbody2D;
     private BoxCollider2D _boxCollider;
@@ -26,13 +31,12 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         JumpLogic();
-
+        ShootLogic();
     }
 
     private void FixedUpdate()
     {
         PlayerMovement();
-
     }
 
     private void PlayerMovement()
@@ -54,6 +58,16 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonUp("Jump"))
             _rigidbody2D.velocity = new Vector2(_rigidbody2D.velocity.x, _rigidbody2D.velocity.y * .1f);
         //_rigidbody2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+    }
+    
+    private void ShootLogic()
+    {
+        if (Input.GetButtonDown("Fire1"))
+        {
+            Vector3 tempPos = _blasterOrigin.transform.position;
+            Vector3 origin = new Vector3(tempPos.x, tempPos.y, tempPos.z);
+            Instantiate(_bullet, origin, Quaternion.identity);
+        }
     }
 
     private void Flip()
