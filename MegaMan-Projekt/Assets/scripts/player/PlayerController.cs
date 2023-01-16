@@ -69,16 +69,17 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetButtonUp("Jump"))
             _rigidbody2D.velocity = new Vector2(_rigidbody2D.velocity.x, _rigidbody2D.velocity.y * .1f);
-        //_rigidbody2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
     }
-    
+
     private void ShootLogic()
     {
         if (Input.GetButtonDown("Fire1"))
         {
             Vector3 tempPos = _blasterOrigin.transform.position;
             Vector3 origin = new Vector3(tempPos.x, tempPos.y, tempPos.z);
-            Instantiate(_bullet, origin, Quaternion.identity);
+
+            GameObject bullet = Instantiate(_bullet, origin, Quaternion.identity);
+            bullet.GetComponent<DefaultBullet>().isFlipped = isFlipped;
         }
     }
 

@@ -5303,6 +5303,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 122739256847053932, guid: 3bab809331e55de45a87e208ef4e70bb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.97
+      objectReference: {fileID: 0}
+    - target: {fileID: 122739256847053932, guid: 3bab809331e55de45a87e208ef4e70bb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 9127171813592338468, guid: 3bab809331e55de45a87e208ef4e70bb, type: 3}
       propertyPath: m_SortingOrder
       value: 5
@@ -5355,6 +5363,10 @@ PrefabInstance:
       propertyPath: animator
       value: 
       objectReference: {fileID: 1052347718}
+    - target: {fileID: 9127171813592338470, guid: 3bab809331e55de45a87e208ef4e70bb, type: 3}
+      propertyPath: jumpForce
+      value: 13.5
+      objectReference: {fileID: 0}
     - target: {fileID: 9127171813592338475, guid: 3bab809331e55de45a87e208ef4e70bb, type: 3}
       propertyPath: m_Name
       value: MegaMan
